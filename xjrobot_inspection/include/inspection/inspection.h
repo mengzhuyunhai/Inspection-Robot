@@ -14,7 +14,7 @@
  *
  */
 
-/* Author: Zhang Chunyang */
+/* Author: Li Zhongfa */
 
 #include <sstream>
 #include <cstdlib>
@@ -60,17 +60,17 @@ using namespace std;
 
 enum AUTOCHARGE_STATE
 {
-    AUTOCHARGE_GOING_TO_CHARGEROME,    //��ʻ��    
-    AUTOCHARGE_REACHED_CHARGEROME,     //�����緿�ſ�
-    AUTOCHARGE_CHARGING,               //�����
-    AUTOCHARGE_RETRY,                  //���û�гɹ�������³���
-    AUTOCHARGE_SPARE,                  //����״̬
-    AUTOCHARGE_ERROR,                  //��緢������
-    AUTOCHARGE_FAILED,                 //������³���һ��������(��ʱ����Ϊ10��)����δ�ɹ�,����ʧ��״̬
-    AUTOCHARGE_WAITING_DOOR_OPEN_OUTOF_TIME,   //�ȴ���緿�Ŵ򿪳�ʱ(��ʱ����Ϊ10����)
-    AUTOCHARGE_CHARGE_OPEN_FAILED,             //�������ʧ��
-    AUTOCHARGE_NAVIGATION_OUTOF_TIME,           //������ʱ(��ʱ����Ϊ���Сʱ��δ�ӵ�ǰ���ܵ��¸���)
-    AUTOCHARGE_PILING           //���ڶ�׮
+    AUTOCHARGE_GOING_TO_CHARGEROME,    //行驶中    
+    AUTOCHARGE_REACHED_CHARGEROME,     //到达充电房门口
+    AUTOCHARGE_CHARGING,               //充电中
+    AUTOCHARGE_RETRY,                  //充电没有成功后的重新尝试
+    AUTOCHARGE_SPARE,                  //空闲状态
+    AUTOCHARGE_ERROR,                  //充电发生错误
+    AUTOCHARGE_FAILED,                 //充电重新尝试一定次数后(暂时设置为10次)还是未成功,发布失败状态
+    AUTOCHARGE_WAITING_DOOR_OPEN_OUTOF_TIME,   //等待充电房门打开超时(暂时设置为10分钟)
+    AUTOCHARGE_CHARGE_OPEN_FAILED,             //开启充电失败
+    AUTOCHARGE_NAVIGATION_OUTOF_TIME,           //导航超时(暂时设置为半个小时还未从当前点跑到下个点)
+    AUTOCHARGE_PILING           //正在对桩
 };
 
 #define VISIT_NO    0
