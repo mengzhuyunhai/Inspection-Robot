@@ -14,7 +14,7 @@
  *
  */
 
-/* Author: Zhang Chunyang */
+/* Author: Li Zhongfa */
 
 #include "inspection.h"
 
